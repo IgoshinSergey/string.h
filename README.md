@@ -140,7 +140,8 @@
 double d = 12.34;
 int i = 4321;
 char str[100] = "str";
-s21_sprintf("%#.10lf, %p, %10s, %x\n", d, &i, str, i);
+char dst[100] = "";
+s21_sprintf("%#.10lf, %p, %10s, %x\n", dst, d, &i, str, i);
 ```
 
 ### Реализация функции sscanf

@@ -139,9 +139,10 @@
 ```C
 double d = 12.34;
 int i = 4321;
-char str[100] = "str";
-char dst[100] = "";
-s21_sprintf("%#.10lf, %p, %10s, %x\n", dst, d, &i, str, i);
+char str[100] = "";
+char format[100] = "%#.10lf, %p, %10s, %x\n";
+char tmp[100] = "str";
+s21_sprintf(str, format, d, &i, tmp, i);
 ```
 
 ### Реализация функции sscanf
@@ -152,8 +153,9 @@ s21_sprintf("%#.10lf, %p, %10s, %x\n", dst, d, &i, str, i);
 ```C
 double d = 0;
 int i = 0;
-char str[100];
-s21_sprintf("num: 100.12, str: example, int: 4321", "num: %lf, str: %s, int: %d", &d, str, &i);
+char str[100] = "num: 100.12, int: 4321";
+char format[100] = "num: %lf, int: %d";
+s21_sscanf(str, format, &d, &i);
 ```
 
 ### Реализация специальных функций обработки строк
